@@ -1,0 +1,53 @@
+package convocatoriaordinaria2021;
+import java.util.Scanner;
+public class ciclonumeros {
+	static Scanner sc=new Scanner(System.in);
+	static int numero1;
+	static int numero2;
+	static String x;
+	static int j;
+	static int i;
+	
+	static public void comprobacionNumeros(int numero1,int numero2){
+		if((numero1>=0)&(numero1<=10)) {
+			System.out.println("Usted ha elegido el numero "+numero1);
+		}else{
+			System.out.println("El valor introducido no es correcto");
+			System.exit(0);
+		}
+		if((numero2>=0)&(numero2<=10)){
+			if(numero2>numero1) {
+				System.out.println("Usted ha elegido el numero "+numero2);
+			}else {
+				System.out.println("El valor introducido no es correcto");
+				System.exit(0);
+			}
+			
+		}else {
+			System.out.println("El valor introducido no es correcto");
+			System.exit(0);
+		}
+	}
+	public static void recorridoNumeros(int numero1,int numero2) {
+		
+		for (i=numero1;i<=numero2;i++) {
+			System.out.print(i);
+			x=String.valueOf(i);
+			
+			for(j=1;j<i;j++) {
+				
+				System.out.print(x);
+			}
+			System.out.println();
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println("Introduzca un número del 1 al 10");
+		numero1=sc.nextInt();
+		System.out.println("Introduzca otro número mayor que el anterior y comprendido del 1 al 10");
+		numero2=sc.nextInt();
+		ciclonumeros.comprobacionNumeros(numero1, numero2);
+		ciclonumeros.recorridoNumeros(numero1, numero2);
+	}
+
+}
